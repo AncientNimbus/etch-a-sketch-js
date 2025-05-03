@@ -3,8 +3,9 @@ const canvas = document.querySelector(".canvas");
 const gridSizeElem = document.querySelector("#grid-size");
 const s = gridSizeElem;
 
-function initGrid(gridSize = 16) {
+function initGrid(gridSize = 16, container, sqWidth) {
   s.textContent = gridSize;
+  generateGrid(gridSize, container, sqWidth);
 }
 
 function setGridSize(gridMin = 5, gridMax = 100) {
@@ -33,12 +34,13 @@ function setGridSize(gridMin = 5, gridMax = 100) {
  *
  */
 function generateGrid(gridSize, container, sqWidth = 5) {
-  for (let i = 0; i < Number(gridSize); i++) {
+  const sqrtNum = Math.pow(gridSize, 2);
+  for (let i = 0; i < sqrtNum; i++) {
     const gridElem = document.createElement("div");
     gridElem.classList = "grid-element";
     gridElem.style.width = `${sqWidth}rem`;
     gridElem.style.height = `${sqWidth}rem`;
-    gridElem.textContent = `Grid ${i + 1}`;
+    gridElem.textContent = `G${i + 1}`;
 
     addToContainer(container, gridElem);
   }
@@ -53,7 +55,15 @@ function addToContainer(container, elem) {
   container.appendChild(elem);
 }
 
+canvas.addEventListener("mouseover", (e) => {
+  let target = e.target;
+
+  //   console.log(target.classList.value);
+  if (target.classList.value === "grid-element") {
+    target.style.backgroundColor = "black";
+  }
+});
+
 // Main
-initGrid(16);
+initGrid(16, canvas);
 setGridSize();
-generateGrid(s.textContent, canvas, 5);

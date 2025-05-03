@@ -44,7 +44,7 @@ main {
 .canvas {
   background-color: rgb(222, 221, 231);
   border-radius: 34px;
-  margin: 0 55px;
+  margin: 0 5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,8 +53,12 @@ main {
 }
 
 .grid-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: cadetblue;
+  color: black;
+  background-color: rgb(212, 212, 212);
 }
 
 .controls {

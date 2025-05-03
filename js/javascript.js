@@ -66,12 +66,28 @@ function increaseOpacity(id, rate = 10) {
   elem.style.opacity = Number(elem.style.opacity) + rate * 0.01;
 }
 
+/**
+ *
+ * @param {bool} randomized
+ * @returns {string} A RGB color in string value
+ */
+function colorMode(randomized = false) {
+  const randNum = (range = 255) => {
+    return Math.round(Math.random() * range);
+  };
+
+  if (randomized) {
+    return `rgb(${randNum()}, ${randNum()}, ${randNum()})`;
+  } else {
+    return "black";
+  }
+}
+
 canvas.addEventListener("mouseover", (e) => {
   let target = e.target;
 
   if (target.classList.value === "grid-element" && target.style.opacity <= 1) {
-    // console.log(target.id);
-    target.style.backgroundColor = "rgb(0, 0, 0)";
+    target.style.backgroundColor = colorMode(true);
     increaseOpacity(target.id);
   }
 });

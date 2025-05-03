@@ -9,6 +9,19 @@ function initGrid(gridSize = 16, container, sqWidth) {
   generateGrid(gridSize, container, sqWidth);
 }
 
+/**
+ *
+ * @param {HTMLElement} container
+ * @param {number} gridSize
+ */
+function resetGrid(container, gridSize) {
+  const grids = document.querySelectorAll(".grid-element");
+  grids.forEach((elem) => {
+    container.removeChild(elem);
+  });
+  generateGrid(gridSize, container);
+}
+
 function setGridSize(gridMin = 5, gridMax = 100) {
   const gridControls = document.querySelector("#dial-l");
   gridControls.addEventListener("click", (e) => {
@@ -19,10 +32,12 @@ function setGridSize(gridMin = 5, gridMax = 100) {
       case "increase-size":
         gridSize = gridSize < gridMax ? gridSize + 1 : gridSize;
         s.textContent = gridSize;
+        resetGrid(canvas, gridSize);
         break;
       case "decrease-size":
         gridSize = gridSize > gridMin ? gridSize - 1 : gridSize;
         s.textContent = gridSize;
+        resetGrid(canvas, gridSize);
         break;
     }
     // TODO: Change buttons state when it reaches min or max
@@ -48,9 +63,9 @@ function setColorMode() {
 /**
  * Generate a square grid based on the provided value
  * @param {number} gridSize
- *
+ * @param {HTMLElement} container
  */
-function generateGrid(gridSize, container, sqWidth = 5) {
+function generateGrid(gridSize, container, sqWidth = 2) {
   const sqrtNum = Math.pow(gridSize, 2);
   for (let i = 0; i < sqrtNum; i++) {
     const gridElem = document.createElement("div");

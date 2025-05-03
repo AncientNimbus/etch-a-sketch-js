@@ -1,11 +1,9 @@
 const canvas = document.querySelector(".canvas");
+/** Grid size @type {HTMLDivElement} */
 const gridSizeElem = document.querySelector("#grid-size");
-
-canvas.textContent = "Grid area";
+const s = gridSizeElem;
 
 function initGrid(gridSize = 16) {
-  let s = gridSizeElem;
-
   s.textContent = gridSize;
 }
 
@@ -13,7 +11,6 @@ function setGridSize(gridMin = 5, gridMax = 100) {
   const gridControls = document.querySelector("#dial-l");
   gridControls.addEventListener("click", (e) => {
     let target = e.target;
-    let s = gridSizeElem;
     let gridSize = Number(s.textContent);
 
     switch (target.id) {
@@ -26,11 +23,37 @@ function setGridSize(gridMin = 5, gridMax = 100) {
         s.textContent = gridSize;
         break;
     }
-
     // TODO: Change buttons state when it reaches min or max
   });
 }
 
+/**
+ * Generate a square grid based on the provided value
+ * @param {number} gridSize
+ *
+ */
+function generateGrid(gridSize, container, sqWidth = 5) {
+  for (let i = 0; i < Number(gridSize); i++) {
+    const gridElem = document.createElement("div");
+    gridElem.classList = "grid-element";
+    gridElem.style.width = `${sqWidth}rem`;
+    gridElem.style.height = `${sqWidth}rem`;
+    gridElem.textContent = `Grid ${i + 1}`;
+
+    addToContainer(container, gridElem);
+  }
+}
+
+/**
+ *
+ * @param {HTMLElement} container
+ * @param {HTMLElement} elem
+ */
+function addToContainer(container, elem) {
+  container.appendChild(elem);
+}
+
 // Main
-initGrid();
+initGrid(16);
 setGridSize();
+generateGrid(s.textContent, canvas, 5);

@@ -36,12 +36,25 @@ header {
 
 main {
   min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .canvas {
   background-color: rgb(222, 221, 231);
   border-radius: 34px;
   margin: 0 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.grid-element {
+  text-align: center;
+  background-color: cadetblue;
 }
 
 .controls {

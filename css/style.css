@@ -1,0 +1,94 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: antiquewhite;
+  margin: 34px 21px;
+}
+
+a {
+  color: gold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header,
+footer,
+main {
+  background-color: firebrick;
+  color: goldenrod;
+  box-shadow: 0px 13px 13px black;
+}
+
+header,
+footer {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0 0 34px 34px;
+}
+
+header {
+  border-radius: 34px 34px 0 0;
+}
+
+main {
+  min-height: 60vh;
+}
+
+.canvas {
+  background-color: rgb(222, 221, 231);
+  border-radius: 34px;
+  margin: 0 55px;
+}
+
+.controls {
+  margin: 34px 34px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#dial-l,
+#dial-r {
+  height: 144px;
+  width: 144px;
+  background-color: rgb(222, 221, 231);
+  border-radius: 50%;
+  box-shadow: 0px 5px 21px black;
+}
+
+#dial-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#dial-l button {
+  background: rgba(0, 0, 0, 0.1);
+  width: 9rem;
+  height: 4.5rem;
+  font-size: 2.5rem;
+  border: 0px;
+}
+
+#increase-size {
+  border-radius: 10rem 10rem 0 0;
+}
+
+#decrease-size {
+  border-radius: 0 0 10rem 10rem;
+}
+
+#grid-size {
+  padding-top: 4px;
+  width: 10rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0px 0px 2px black inset;
+}

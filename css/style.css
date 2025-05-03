@@ -75,6 +75,14 @@ main {
   border: 0px;
 }
 
+#dial-l button:hover {
+  background: rgba(230, 219, 158, 0.1);
+}
+
+#dial-l button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 #increase-size {
   border-radius: 10rem 10rem 0 0;
 }

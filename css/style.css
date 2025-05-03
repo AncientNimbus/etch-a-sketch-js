@@ -76,7 +76,8 @@ main {
   box-shadow: 0px 5px 21px black;
 }
 
-#dial-l {
+#dial-l,
+#dial-r {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,7 +85,8 @@ main {
   overflow: hidden;
 }
 
-#dial-l button {
+#dial-l button,
+#dial-r button {
   background: rgba(0, 0, 0, 0.1);
   width: 9rem;
   height: 4.5rem;
@@ -92,25 +94,37 @@ main {
   border: 0px;
 }
 
-#dial-l button:hover {
+#dial-l button:hover,
+#dial-r button:hover {
   background: rgba(230, 219, 158, 0.1);
 }
 
-#dial-l button:active {
+#dial-l button:active,
+#dial-r button:active {
   background: rgba(0, 0, 0, 0.1);
 }
 
-#dial-l button:disabled {
+#dial-l button:disabled,
+#dial-r button:disabled {
   /* Prevent hover color from showing*/
   background: rgba(0, 0, 0, 0.1);
 }
 
-#increase-size {
+#increase-size,
+#mono {
   border-radius: 10rem 10rem 0 0;
 }
 
-#decrease-size {
+#decrease-size,
+#random {
   border-radius: 0 0 10rem 10rem;
+}
+
+.action-btn#mono,
+.action-btn#random {
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0px 0px 1px black inset;
 }
 
 #grid-size {

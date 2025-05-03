@@ -2,6 +2,7 @@ const canvas = document.querySelector(".canvas");
 /** Grid size @type {HTMLDivElement} */
 const gridSizeElem = document.querySelector("#grid-size");
 const s = gridSizeElem;
+let randomized = false;
 
 function initGrid(gridSize = 16, container, sqWidth) {
   s.textContent = gridSize;
@@ -25,6 +26,22 @@ function setGridSize(gridMin = 5, gridMax = 100) {
         break;
     }
     // TODO: Change buttons state when it reaches min or max
+  });
+}
+
+function setColorMode() {
+  const colorControls = document.querySelector("#dial-r");
+  colorControls.addEventListener("click", (e) => {
+    let target = e.target;
+
+    switch (target.id) {
+      case "mono":
+        randomized = false;
+        break;
+      case "random":
+        randomized = true;
+        break;
+    }
   });
 }
 
@@ -83,15 +100,16 @@ function colorMode(randomized = false) {
   }
 }
 
+// Main
+initGrid(16, canvas, 2);
+setGridSize();
+setColorMode();
+
 canvas.addEventListener("mouseover", (e) => {
   let target = e.target;
 
   if (target.classList.value === "grid-element" && target.style.opacity <= 1) {
-    target.style.backgroundColor = colorMode(true);
+    target.style.backgroundColor = colorMode(randomized);
     increaseOpacity(target.id);
   }
 });
-
-// Main
-initGrid(16, canvas, 2);
-setGridSize();

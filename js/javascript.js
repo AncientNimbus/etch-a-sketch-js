@@ -38,9 +38,10 @@ function generateGrid(gridSize, container, sqWidth = 5) {
   for (let i = 0; i < sqrtNum; i++) {
     const gridElem = document.createElement("div");
     gridElem.classList = "grid-element";
+    gridElem.id = `g-${i}`;
     gridElem.style.width = `${sqWidth}rem`;
     gridElem.style.height = `${sqWidth}rem`;
-    gridElem.textContent = `G${i + 1}`;
+    gridElem.style.opacity = 0;
 
     addToContainer(container, gridElem);
   }
@@ -55,15 +56,26 @@ function addToContainer(container, elem) {
   container.appendChild(elem);
 }
 
+/**
+ *
+ * @param {string} id
+ * @param {number} rate
+ */
+function increaseOpacity(id, rate = 10) {
+  const elem = document.querySelector(`.grid-element#${id}`);
+  elem.style.opacity = Number(elem.style.opacity) + rate * 0.01;
+}
+
 canvas.addEventListener("mouseover", (e) => {
   let target = e.target;
 
-  //   console.log(target.classList.value);
-  if (target.classList.value === "grid-element") {
-    target.style.backgroundColor = "black";
+  if (target.classList.value === "grid-element" && target.style.opacity <= 1) {
+    // console.log(target.id);
+    target.style.backgroundColor = "rgb(0, 0, 0)";
+    increaseOpacity(target.id);
   }
 });
 
 // Main
-initGrid(16, canvas);
+initGrid(16, canvas, 2);
 setGridSize();

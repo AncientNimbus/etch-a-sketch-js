@@ -83,6 +83,11 @@ main {
   background: rgba(0, 0, 0, 0.1);
 }
 
+#dial-l button:disabled {
+  /* Prevent hover color from showing*/
+  background: rgba(0, 0, 0, 0.1);
+}
+
 #increase-size {
   border-radius: 10rem 10rem 0 0;
 }

@@ -14,12 +14,12 @@ function initGrid(gridSize = 16, container, sqWidth) {
  * @param {HTMLElement} container
  * @param {number} gridSize
  */
-function resetGrid(container, gridSize) {
+function resetGrid(container, gridSize, sqrtNum) {
   const grids = document.querySelectorAll(".grid-element");
   grids.forEach((elem) => {
     container.removeChild(elem);
   });
-  generateGrid(gridSize, container);
+  generateGrid(gridSize, container, sqrtNum);
 }
 
 function setGridSize(gridMin = 5, gridMax = 100) {
@@ -67,13 +67,15 @@ function setColorMode() {
  */
 function generateGrid(gridSize, container, sqWidth = 2) {
   const sqrtNum = Math.pow(gridSize, 2);
+  const tileSize = 100 / gridSize;
+
   for (let i = 0; i < sqrtNum; i++) {
     const gridElem = document.createElement("div");
     gridElem.classList = "grid-element";
     gridElem.id = `g-${i}`;
-    gridElem.style.width = `${sqWidth}rem`;
-    gridElem.style.height = `${sqWidth}rem`;
-    gridElem.style.opacity = 0;
+    gridElem.style.width = `${tileSize}%`;
+    gridElem.style.height = `${tileSize}%`;
+    gridElem.style.opacity = 0.5;
 
     addToContainer(container, gridElem);
   }
@@ -116,7 +118,7 @@ function colorMode(randomized = false) {
 }
 
 // Main
-initGrid(16, canvas, 2);
+initGrid(16, canvas, 4);
 setGridSize();
 setColorMode();
 

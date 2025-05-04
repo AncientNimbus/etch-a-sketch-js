@@ -1,7 +1,7 @@
 body {
   font-family: "Courier New", Courier, monospace;
-  background-color: antiquewhite;
-  margin: 34px 21px;
+  background-color: burlywood;
+  margin: 34px auto;
   width: 700px;
   display: flex;
   flex-direction: column;

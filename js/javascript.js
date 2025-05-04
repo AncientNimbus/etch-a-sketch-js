@@ -24,6 +24,8 @@ function resetGrid(container, gridSize, sqrtNum) {
 
 function setGridSize(gridMin = 5, gridMax = 100) {
   const gridControls = document.querySelector("#dial-l");
+  const buttons = document.querySelectorAll("#dial-l .action-btn");
+
   gridControls.addEventListener("click", (e) => {
     let target = e.target;
     let gridSize = Number(s.textContent);
@@ -33,14 +35,23 @@ function setGridSize(gridMin = 5, gridMax = 100) {
         gridSize = gridSize < gridMax ? gridSize + 1 : gridSize;
         s.textContent = gridSize;
         resetGrid(canvas, gridSize);
+
+        target.disabled = gridSize === gridMax ? true : false;
         break;
       case "decrease-size":
         gridSize = gridSize > gridMin ? gridSize - 1 : gridSize;
         s.textContent = gridSize;
         resetGrid(canvas, gridSize);
+
+        target.disabled = gridSize === gridMin ? true : false;
         break;
     }
-    // TODO: Change buttons state when it reaches min or max
+
+    if (gridSize < gridMax && gridSize > gridMin) {
+      buttons.forEach((btn) => {
+        btn.disabled = false;
+      });
+    }
   });
 }
 

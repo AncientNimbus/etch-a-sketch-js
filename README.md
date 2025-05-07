@@ -2,7 +2,8 @@
 
 My JavaScript refresher project. More info can be found [here](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
 
-<img src="https://private-user-images.githubusercontent.com/99920424/440179260-291d82b4-4b09-4d26-b1a9-61b8e031d890.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY2NDkyMDEsIm5iZiI6MTc0NjY0ODkwMSwicGF0aCI6Ii85OTkyMDQyNC80NDAxNzkyNjAtMjkxZDgyYjQtNGIwOS00ZDI2LWIxYTktNjFiOGUwMzFkODkwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTA3VDIwMTUwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg4NTQwYTYxMDQxMTk5OTkyM2E1NjFmNDcwZDUxMGJhNDdhY2M5N2E5ODEzZTAxM2ZmMDg2Y2I0M2RmZWZhZGImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.FrEfeVKOil67-IHFk_Wop_yScph5m-4-5iM0YGLPkg4" alt="Cover " style="zoom:50%;" />
+<img width="500" alt="Cover Image" src="https://github.com/user-attachments/assets/2a3ec93a-3b14-443f-a74a-649d63928655" />
+
 
 ## Feature
 
